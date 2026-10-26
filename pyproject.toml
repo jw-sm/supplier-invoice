@@ -1,0 +1,22 @@
+[project]
+name = "supplier-invoice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "anthropic>=0.125.0",
+    "fastapi>=0.128.8",
+    "google-genai>=1.47.0",
+    "pdfplumber>=0.11.8",
+    "pydantic>=2.13.5",
+    "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.39.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8.4.2",
+]
