@@ -38,6 +38,7 @@ _DATE = (
 RE_INVOICE_DATE = re.compile(
     r"(?:invoice\s*date|date\s*of\s*invoice|dated)\s*[:\-]?\s*" + _DATE, re.I
 )
+
 RE_DUE_DATE = re.compile(r"(?:due\s*date|payment\s*due)\s*[:\-]?\s*" + _DATE, re.I)
 
 RE_ABN = re.compile(

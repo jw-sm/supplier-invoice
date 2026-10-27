@@ -1,0 +1,119 @@
+{
+  "invoice_number": "NES-2026-10482",
+  "invoice_date": "October 20, 2026",
+  "due_date": "November 19, 2026",
+  "currency": "USD",
+  "supplier_name": "Northstar Electrical Supply Co.",
+  "supplier_abn": "84-7291056",
+  "bill_to_name": null,
+  "job_reference": "JOB-2026-174",
+  "project": null,
+  "subtotal": 1609.25,
+  "gst": 0.0,
+  "total_due": 1609.25,
+  "materials": [
+    {
+      "description": "12 AWG THHN Copper Wire, Black",
+      "qty": 500.0,
+      "unit": "ft",
+      "unit_price": 0.32,
+      "amount": 160.0
+    },
+    {
+      "description": "10 AWG THHN Copper Wire, Red",
+      "qty": 300.0,
+      "unit": "ft",
+      "unit_price": 0.58,
+      "amount": 174.0
+    },
+    {
+      "description": "3/4-inch EMT Conduit, 10 ft",
+      "qty": 40.0,
+      "unit": "ea",
+      "unit_price": 8.75,
+      "amount": 350.0
+    },
+    {
+      "description": "3/4-inch EMT Compression Connector",
+      "qty": 50.0,
+      "unit": "ea",
+      "unit_price": 1.2,
+      "amount": 60.0
+    },
+    {
+      "description": "3/4-inch EMT Set-Screw Coupling",
+      "qty": 40.0,
+      "unit": "ea",
+      "unit_price": 0.95,
+      "amount": 38.0
+    },
+    {
+      "description": "4-inch Square Electrical Box",
+      "qty": 25.0,
+      "unit": "ea",
+      "unit_price": 3.4,
+      "amount": 85.0
+    },
+    {
+      "description": "20A Single-Pole Circuit Breaker",
+      "qty": 12.0,
+      "unit": "ea",
+      "unit_price": 18.5,
+      "amount": 222.0
+    },
+    {
+      "description": "30A Double-Pole Circuit Breaker",
+      "qty": 6.0,
+      "unit": "ea",
+      "unit_price": 42.0,
+      "amount": 252.0
+    },
+    {
+      "description": "20A Duplex Receptacle",
+      "qty": 20.0,
+      "unit": "ea",
+      "unit_price": 4.25,
+      "amount": 85.0
+    },
+    {
+      "description": "15A Single-Gang Light Switch",
+      "qty": 15.0,
+      "unit": "ea",
+      "unit_price": 3.1,
+      "amount": 46.5
+    },
+    {
+      "description": "Single-Gang Wall Plate, White",
+      "qty": 15.0,
+      "unit": "ea",
+      "unit_price": 0.85,
+      "amount": 12.75
+    },
+    {
+      "description": "10 AWG Grounding Wire",
+      "qty": 100.0,
+      "unit": "ft",
+      "unit_price": 0.44,
+      "amount": 44.0
+    },
+    {
+      "description": "Conduit Cutting and Preparation Charge",
+      "qty": 1.0,
+      "unit": "lot",
+      "unit_price": 45.0,
+      "amount": 45.0
+    },
+    {
+      "description": "Standard Delivery Charge",
+      "qty": 1.0,
+      "unit": "lot",
+      "unit_price": 35.0,
+      "amount": 35.0
+    }
+  ],
+  "strategy_used": "deterministic",
+  "confidence": 1.0,
+  "gst_check_failed": false,
+  "warnings": [],
+  "provider_used": null
+}
