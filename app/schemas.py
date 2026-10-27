@@ -19,7 +19,7 @@ class InvoiceData(BaseModel):
     supplier_name: Optional[str] = None
     supplier_abn: Optional[str] = None
     bill_to_name: Optional[str] = None
-    job_number: Optional[str] = None
+    job_reference: Optional[str] = None
     project: Optional[str] = None
     subtotal: Optional[float] = None
     gst: Optional[float] = None
