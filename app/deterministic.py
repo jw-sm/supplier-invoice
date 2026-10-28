@@ -22,6 +22,7 @@ def _norm(s: str) -> str:
 # --- strict ID pattern: PREFIX-NUMBER[-NUMBER...] (handles concatenated text) ---
 _ID = r"([A-Z]{2,5}[-\/]\d{2,}(?:[-\/][A-Z0-9]+)*)"
 
+
 RE_INVOICE_NO = re.compile(
     r"(?:invoice|inv)\s*(?:no\.?|number|#)\s*[:\-]?\s*" + _ID,
     re.I,
@@ -29,12 +30,14 @@ RE_INVOICE_NO = re.compile(
 
 _DATE = (
     r"("
-    r"\d{1,2}\s+[A-Za-z]{3,9},?\s+\d{4}"
-    r"|[A-Za-z]{3,9}\s+\d{1,2},?\s+\d{4}"
-    r"|\d{4}-\d{2}-\d{2}"
-    r"|\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}"
+    r"\d{1,2}\s+[A-Za-z]{3,9},?\s+\d{4}"  # 28 Oct 2026, 28 October 2026
+    r"|[A-Za-z]{3,9}\s+\d{1,2},?\s+\d{4}"  # Oct 28 2026, October 28, 2026
+    r"|\d{4}-\d{2}-\d{2}"                  # 2026-10-28 (YYYY-MM-DD)
+    r"|\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}" # 28/10/2026, 10/28/2026, 28-10-26
     r")"
 )
+
+#INVNO.
 RE_INVOICE_DATE = re.compile(
     r"(?:invoice\s*date|date\s*of\s*invoice|dated)\s*[:\-]?\s*" + _DATE, re.I
 )
@@ -69,14 +72,17 @@ RE_GST = re.compile(
     re.I,
 )
 
-# Phrase-based — will NOT match a bare "Total" so it can't be fooled by "Sub Total".
+# Phrase-based total amount detection.
+# Intentionally does NOT match a bare "Total" to avoid false matches
+# such as "Sub Total".
+
 RE_TOTAL = re.compile(
     r"(?:"
-    r"total\s*(?:due|amount|payable|inc\.?\s*gst|incl\.?\s*gst)"
-    r"|balance\s*due"
-    r"|amount\s*due"
-    r")\s*[:\-]?\s*\$?\s*([\d,]+\.\d{2})",
-    re.I,
+    r"total\s*(?:due|amount|payable|inc\.?\s*gst|incl\.?\s*gst)"  # Total Due, Total Amount, Total Payable, Total Inc GST, Total Incl. GST
+    r"|balance\s*due"                                           # Balance Due
+    r"|amount\s*due"                                            # Amount Due
+    r")\s*[:\-]?\s*\$?\s*([\d,]+\.\d{2})",                     # Optional colon/hyphen, optional $, then amount (e.g. $1,250.00)
+    re.I,                                                        # Case-insensitive matching
 )
 
 RE_COMPANY_SUFFIX = re.compile(r"\b(pty|ltd|limited|inc|llc|& co|co)\b", re.I)
